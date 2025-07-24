@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background: url('/assets/images/login/login.jpg') no-repeat center center fixed;
+            background: url('/assets/images/login/image.jpg') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
         }
