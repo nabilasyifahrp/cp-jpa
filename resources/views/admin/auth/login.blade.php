@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
             margin: 0;
@@ -18,19 +19,71 @@
             height: 100vh;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border-radius: 20px;
-            padding: 3rem 2.5rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 420px;
-            min-height: 520px;
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            padding: 0 8%;
+            gap: 5%;
+        }
+
+        .welcome-text {
+            color: #fff;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            min-width: 350px;
+            margin-right: 60px;
+        }
+
+        .welcome-text .line-1 {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: -5px;
+        }
+
+        .welcome-text .line-2 {
+            font-size: 5rem;
+            font-weight: 800;
+            padding-left: 100px;
+        }
+
+        .welcome-text .underline {
+            margin-top: 10px;
+            margin-left: 100px;
+            width: 240px;
+            height: 6px;
+            background: linear-gradient(to right, #ffffff, #3461FF);
+            border-radius: 5px;
+            animation: slide 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(20px);
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 360px;
+            min-height: 480px;
+            color: #000;
+
         }
 
         .avatar-wrapper {
@@ -39,51 +92,42 @@
         }
 
         .avatar-icon {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.25);
+            background-color: rgba(255, 255, 255, 0.6);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3.5rem;
-            color: #fff;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 2.7rem;
+            color: #000;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         h3.title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
 
         .form-group {
             position: relative;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-control {
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.6);
             border: none;
-            color: #fff;
+            color: #000;
             padding-left: 2.5rem;
-            height: 54px;
-            font-size: 1.05rem;
-            font-weight: 500;
+            height: 50px;
+            font-size: 1rem;
         }
 
         .form-control::placeholder {
-            color: #e0e0e0;
-        }
-
-        .form-control:focus {
-            background-color: rgba(255, 255, 255, 0.4);
-            color: #fff;
-            border: none;
-            box-shadow: none;
+            color: #444;
         }
 
         .input-icon {
@@ -91,8 +135,7 @@
             top: 50%;
             left: 10px;
             transform: translateY(-50%);
-            color: #fff;
-            pointer-events: none;
+            color: #000;
             font-size: 1rem;
         }
 
@@ -101,82 +144,96 @@
             top: 50%;
             right: 10px;
             transform: translateY(-50%);
-            color: #fff;
+            color: #000;
             cursor: pointer;
             font-size: 1rem;
         }
 
         .btn-login {
-            background: linear-gradient(to right, #1e88e5, #42a5f5);
+            background-color: #3461FF;
             border: none;
             color: white;
-            font-weight: 700;
-            padding: 0.85rem;
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
-            transition: 0.3s ease-in-out;
-            border-radius: 10px;
+            font-weight: 600;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            width: 100%;
+            transition: background 0.3s ease;
         }
 
         .btn-login:hover {
-            background: linear-gradient(to right, #1565c0, #2196f3);
+            background-color: #274ccc;
         }
 
         .custom-alert {
             background-color: rgba(255, 0, 0, 0.2);
             border-left: 5px solid #ff4444;
-            color: #fff;
+            color: #000;
             font-weight: 500;
             padding: 10px 15px;
             border-radius: 8px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 2rem 1rem;
+                gap: 2rem;
+            }
+
+            .welcome-text {
+                align-items: center;
+                text-align: center;
+                margin: 0;
+            }
+
+            .welcome-text .line-1,
+            .welcome-text .line-2 {
+                font-size: 2.5rem;
+                position: static;
+                padding-left: 0;
+            }
+
+            .welcome-text .underline {
+                width: 150px;
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
             .glass-card {
-                margin: 0 1rem;
-                min-height: 520px;
-                padding: 2rem 1.5rem;
-            }
-
-            .form-control {
-                font-size: 1rem;
-                height: 50px;
-            }
-
-            .btn-login {
-                padding: 0.75rem;
-                font-size: 1rem;
-            }
-
-            h3.title {
-                font-size: 1.5rem;
-            }
-
-            .avatar-icon {
-                width: 90px;
-                height: 90px;
-                font-size: 3rem;
+                max-width: 100%;
+                margin-left: 0;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="glass-card text-white">
-            <div class="avatar-wrapper text-center mb-3">
+    <div class="login-container">
+        <div class="welcome-text">
+            <div class="line-1">Welcome</div>
+            <div class="line-2">Admin!</div>
+            <div class="underline"></div>
+        </div>
+
+        <div class="glass-card">
+            <div class="avatar-wrapper">
                 <div class="avatar-icon">
                     <i class="fa fa-user"></i>
                 </div>
             </div>
-            <h3 class="text-center title">Sign In</h3>
+            <h3 class="title">Sign In</h3>
+
             @if ($errors->any())
             <div class="custom-alert">
                 <i class="fa fa-triangle-exclamation me-2"></i>
                 {{ $errors->first() }}
             </div>
             @endif
+
             <form method="POST" action="{{ url('/login') }}">
                 @csrf
                 <div class="form-group">
@@ -190,13 +247,11 @@
                         <i class="fa fa-eye" id="eyeIcon"></i>
                     </span>
                 </div>
-                <div class="d-grid mt-2">
-                    <button type="submit" class="btn btn-login">LOGIN</button>
-                </div>
+                <button type="submit" class="btn btn-login">LOGIN</button>
             </form>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         function togglePassword() {
             const pass = document.getElementById('password');
