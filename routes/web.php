@@ -7,8 +7,5 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('admin.dashboard.index');
-    })->name('admin.dashboard.index');
+Route::middleware('auth')->group(function () {Route::get('/admin/dashboard', function () {return view('admin.dashboard.index');})->name('admin.dashboard.index');
 });
