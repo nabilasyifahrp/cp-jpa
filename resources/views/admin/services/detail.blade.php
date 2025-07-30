@@ -62,14 +62,14 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #0d6efd;
+            background-color: #0028B2;
             color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border: none;
         }
 
         .icon-button:hover {
-            background-color: #0b5ed7;
+            background-color: #0a2c6b;
         }
 
         .break-word {
@@ -82,9 +82,9 @@
 <body>
     <nav class="navbar navbar-light bg-white shadow-sm rounded-nav">
         <div class="container d-flex justify-content-between align-items-center py-2">
-            <div class="d-flex align-items-center">
+            <a href="{{ route('home.jpa') }}" class="d-flex align-items-center">
                 <img src="{{ asset('assets/images/logo/jpa.png') }}" alt="Logo" class="logo me-2">
-            </div>
+            </a>
             <div class="d-flex gap-2">
                 <a href="{{ route('service.index') }}" class="btn btn-back">Back</a>
                 <form method="POST" action="{{ route('logout') }}">
