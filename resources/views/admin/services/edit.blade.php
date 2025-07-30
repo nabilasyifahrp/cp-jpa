@@ -97,9 +97,9 @@
 <body>
     <nav class="navbar navbar-light bg-white shadow-sm rounded-nav">
         <div class="container d-flex justify-content-between align-items-center py-2">
-            <div class="d-flex align-items-center">
+            <a href="{{ route('home.jpa') }}" class="d-flex align-items-center">
                 <img src="{{ asset('assets/images/logo/jpa.png') }}" alt="Logo" class="logo me-2">
-            </div>
+            </a>
             <div class="d-flex gap-2">
                 <a href="{{ route('service.read', $service->id) }}" class="btn btn-back">Back</a>
                 <form method="POST" action="{{ route('logout') }}">
