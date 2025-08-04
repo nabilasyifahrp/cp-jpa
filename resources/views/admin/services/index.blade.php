@@ -11,45 +11,60 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fafafa;
+            background-color: #e3e3e3;
         }
 
         .rounded-nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .logo {
             width: 50px;
         }
 
-        .btn-back {
+        .btn-navbar {
             background-color: transparent;
             border: none;
-            color: #6c757d;
+            color: #000000;
             padding: 6px 16px;
             font-weight: 500;
+            transition: all 0.3s ease;
+            transform: scale(1);
         }
 
-        .btn-back:hover {
-            color: #3461FF;
-            background-color: transparent;
+        .btn-navbar:hover {
+            transform: scale(1.05);
         }
 
         .btn-logout {
-            border-color: #3461FF;
+            background-color: transparent;
+            border: 2px solid #2241b0;
             border-radius: 10px;
             padding: 6px 20px;
-            color: #6c757d;
+            color: #000000;
+            font-weight: 500;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            text-shadow: none;
+            transform: scale(1);
         }
 
         .btn-logout:hover {
             background-color: #3461FF;
-            color: #ffffff;
+            transform: scale(1.05);
         }
 
         .btn-add {
-            background: linear-gradient(to right, #3461FF, #1837A0);
+            background: linear-gradient(to right, #3461FF, #2241b0);
             font-weight: 600;
             border: none;
         }
@@ -75,7 +90,7 @@
         }
 
         .service-card {
-            background: linear-gradient(to right, #3461FF, #1837A0);
+            background: linear-gradient(to right, #3461FF, #2241b0);
             border-radius: 15px;
             padding: 30px;
             color: white;
@@ -101,13 +116,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-white shadow-sm rounded-nav">
+    <nav class="navbar navbar-light shadow-sm rounded-nav">
         <div class="container d-flex justify-content-between align-items-center py-2">
             <a href="{{ route('home.jpa') }}" class="d-flex align-items-center">
                 <img src="{{ asset('assets/images/logo/jpa.png') }}" alt="Logo" class="logo me-2">
             </a>
             <div class="d-flex gap-2">
-                <a href="{{ route('admin.dashboard.index') }}" class="btn btn-back">Back</a>
+                <a href="{{ route('admin.dashboard.index') }}" class="btn btn-navbar">Back</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button class="btn btn-logout">Logout</button>
@@ -115,6 +130,7 @@
             </div>
         </div>
     </nav>
+
 
     <div class="container mt-5">
         <h2 class="text-center fw-semibold">Our Services</h2>

@@ -13,7 +13,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fafafa;
+            background-color: #e3e3e3;
         }
 
         .rounded-nav {
@@ -66,7 +66,7 @@
         }
 
         .btn-add {
-            background: linear-gradient(to right, #3461FF, #1837A0);
+            background: linear-gradient(to right, #3461FF, #2241b0);
             border: none;
             border-radius: 12px;
             font-weight: 600;
@@ -84,7 +84,7 @@
             margin-bottom: 30px;
             font-weight: 600;
             text-decoration: underline;
-            color: #0a2c6b;
+            color: #0f266e;
         }
 
         .top-right-buttons {
