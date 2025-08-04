@@ -8,6 +8,8 @@
 <!-- Title -->
 <title>Jakarta Process Automation</title>
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="shortcut icon" href="assets/images/logo/jpa.png" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- inject css start -->
 
