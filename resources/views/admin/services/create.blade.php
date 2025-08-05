@@ -13,7 +13,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fafafa;
+            background-color: #e3e3e3;
         }
 
         .rounded-nav {
@@ -66,7 +66,7 @@
         }
 
         .btn-add {
-            background: linear-gradient(to right, #3461FF, #1837A0);
+            background: linear-gradient(to right, #3461FF, #2241b0);
             border: none;
             border-radius: 12px;
             font-weight: 600;
@@ -84,7 +84,7 @@
             margin-bottom: 30px;
             font-weight: 600;
             text-decoration: underline;
-            color: #0a2c6b;
+            color: #0f266e;
         }
 
         .top-right-buttons {
@@ -95,11 +95,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-white shadow-xl rounded-nav">
+    <nav class="navbar navbar-light bg-white shadow-sm rounded-nav">
         <div class="container d-flex justify-content-between align-items-center py-2">
-            <div class="d-flex align-items-center">
+            <a href="{{ route('home.jpa') }}" class="d-flex align-items-center">
                 <img src="{{ asset('assets/images/logo/jpa.png') }}" alt="Logo" class="logo me-2">
-            </div>
+            </a>
             <div class="d-flex gap-2">
                 <a href="{{ route('service.index') }}" class="btn btn-back">Back</a>
                 <form method="POST" action="{{ route('logout') }}">
