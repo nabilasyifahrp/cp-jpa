@@ -49,9 +49,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 
+
 });
 
 
 
     
+
 
