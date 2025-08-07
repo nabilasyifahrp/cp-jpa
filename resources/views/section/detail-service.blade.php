@@ -3,7 +3,7 @@
 @section('content')
     <style>
         body {
-            background: #ffffff;
+            background: #fdfdfd;
         }
 
         .service-content {
@@ -27,7 +27,7 @@
             bottom: 20px;
             right: 20px;
             background-color: #0028B2;
-            color: white;
+            color: #fdfdfd;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border: none;
         }
@@ -42,7 +42,7 @@
         }
     </style>
 
-    <div class="container bg-white">
+    <div class="container" style="background: #fdfdfd">
         <div class="service-content">
             @if (session('success'))
                 <div class="alert alert-success fade show auto-dismiss" role="alert">
