@@ -67,6 +67,7 @@
             background: linear-gradient(to right, #3461FF, #2241b0);
             font-weight: 600;
             border: none;
+            color: #fdfdfd;
         }
 
         .btn-add:hover {
@@ -78,7 +79,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
-            background-color: #fff;
+            background-color: #fdfdfd;
             padding: 20px;
             transition: transform 0.2s;
             height: 220px;
@@ -142,7 +143,7 @@
         @endif
 
         <div class="text-end mb-5">
-            <a href="{{ route('service.create') }}" class="btn btn-add px-4 py-2 text-white">Add Service</a>
+            <a href="{{ route('service.create') }}" class="btn btn-add px-4 py-2">Add Service</a>
         </div>
         <div class="row justify-content-center g-4">
             @foreach ($services as $service)

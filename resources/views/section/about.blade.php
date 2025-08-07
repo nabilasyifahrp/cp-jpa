@@ -4,6 +4,8 @@
         padding-top: 64px;
         padding-bottom: 128px;
         overflow: hidden;
+
+        color: #fdfdfd;
     }
 
     .nav-tabs {
@@ -11,7 +13,7 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         border-bottom: none;
-        padding-left: 8px;
+        margin-left: -18px;
         gap: 8px;
 
     }
@@ -41,7 +43,8 @@
         display: inline-block;
         border-bottom: 3px solid #001f3f;
         padding-bottom: 5px;
-        margin-bottom: 24px;    }
+        margin-bottom: 24px;
+    }
 
     .about-image {
         background-color: #fdfdfd;
@@ -73,10 +76,25 @@
         color: #fdfdfd;
     }
 
+    #tab-content ol {
+        list-style-position: inside;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    #tab-content li {
+        margin-bottom: 8px;
+        text-align: left;
+        font-size: 15.5px;
+    }
+
+
     #tab-title,
     #tab-content {
         transition: opacity 0.4s ease;
     }
+
+    
 
     @media (max-width: 768px) {
         .container {
@@ -90,9 +108,13 @@
         }
 
         .nav-tabs .nav-link {
-            font-size: 13.6px ;
+            font-size: 13.6px;
             font-size: 16px;
 
+        }
+
+        .nav-tabs {
+            margin-left: -8px !important;
         }
 
         #tab-title {
@@ -105,7 +127,7 @@
     }
 </style>
 
-<section id="about" class="position-relative text-white wrapper">
+<section id="about" class="position-relative wrapper">
 
     <div class="container position-relative px-3" style="z-index: 1;">
         <ul class="nav nav-tabs border-0 mb-4">
@@ -142,7 +164,7 @@
     </div>
     <div class="position-absolute bottom-0 start-0 w-100">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path fill="#ffffff"
+            <path fill="#fdfdfd"
                 d="M0,60L60,66.7C120,73,240,87,360,93.3C480,100,600,100,720,83.3C840,67,960,33,1080,23.3C1200,13,1320,27,1380,33.3L1440,40L1440,100L1380,100C1320,100,1200,100,1080,100C960,100,840,100,720,100C600,100,480,100,360,100C240,100,120,100,60,100L0,100Z">
             </path>
         </svg>
@@ -159,37 +181,54 @@
             "Who": {
                 title: 'Who <span>We Are?</span>',
                 content: `Jakarta Process Automation (JPA) has been engaged in electrical control,
-        instrumentation, and PLC-SCADA programming for more than 9 years. We
-        provide reliable technology-based process automation solutions for
-        various industries.`
+                        instrumentation, and PLC-SCADA programming for more than 9 years. We
+                        provide reliable technology-based process automation solutions for
+                        various industries.`
             },
+
             "Vision & Mission": {
                 title: 'Our <span>Vision & Mission</span>',
                 content: `<strong>Vision:</strong> World Class Competence in Automation Services.<br><br>
-        <strong>Mission:</strong><br>
-        1. High quality production and service<br>
-        2. Good compensation for employee and creating nice working environment to get good relation to customer and supplier<br>
-        3. Be first and best in creating competence manpower in automation<br>
-        4. Make automation part is easy and available`
+                <strong>Mission:</strong>
+                <ol>
+                    <li>High quality production and service</li>
+                    <li>Good compensation for employee and creating nice working environment to get good relation to customer and supplier</li>
+                    <li>Be first and best in creating competence manpower in automation</li>
+                    <li>Make automation part is easy and available</li>
+                </ol>`
             },
+
             "Values": {
                 title: 'Our <span>Values</span>',
-                content: `1. Expertise<br>2. Responsive<br>3. Trust`
+                content: `<ol>
+                    <li>Expertise</li>
+                    <li>Responsive</li>
+                    <li>Trust</li>
+                </ol>`
             },
+
             "Brand": {
                 title: 'Our <span>Brands</span>',
                 content: `We have various experiences with some brand of PLC and SCADA, such as:<br>
-        1. GE<br>2. Schneider<br>3. Allen Bradley<br>4. Siemens`
+                <ol>
+                    <li>GE</li>
+                    <li>Schneider</li>
+                    <li>Allen Bradley</li>
+                    <li>Siemens</li>
+                </ol>`
             },
+
             "Application": {
                 title: 'Our <span>Applications</span>',
                 content: `We serve in various process applications. Such as:<br>
-        1. Control PW / WFI DI Looping<br>
-        2. Control Blending / Mixing<br>
-        3. Control Cleaning In Place (CIP)<br>
-        4. Control Pasteurizer<br>
-        5. Control Water Treatment Plant / Waste Water Treatment Plant<br>
-        6. and others`
+                <ol>
+                    <li>Control PW / WFI DI Looping</li>
+                    <li>Control Blending / Mixing</li>
+                    <li>Control Cleaning In Place (CIP)</li>
+                    <li>Control Pasteurizer</li>
+                    <li>Control Water Treatment Plant / Waste Water Treatment Plant</li>
+                    <li>and others</li>
+                </ol>`
             }
         };
 

@@ -1,6 +1,7 @@
 <style>
     section {
         padding-top: 80px;
+        background-color: #fdfdfd;
     }
 
     .img-partner {
@@ -29,14 +30,14 @@
     }
 </style>
 
-<section id="partner" class="bg-white">
+<section id="partner">
     <div class="container">
         <div class="text-center mb-3">
             <h3 class="partner-title"><span class="section-title">Our Partners</span></h3>
             <p class="partner-subtitle">We work with the best and trusted companies.</p>
         </div>
 
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-duration="900">
             <div class="row justify-content-center">
                 <div class="col-6 col-md-3 text-center img-partner">
                     <img src="{{ asset('assets/images/logo/jpa.png') }}" class="img-fluid mb-2">

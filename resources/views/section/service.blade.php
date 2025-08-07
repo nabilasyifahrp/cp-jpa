@@ -1,6 +1,8 @@
 <style>
-    section{
+    section {
+        margin-bottom: -1px;
         padding-top: 80px;
+        background-color: #fdfdfd;
     }
 
     .service-title {
@@ -28,6 +30,8 @@
         height: 100%;
         transition: all 0.3s ease;
         transform: scale(1);
+        font-family: 'Montserrat', sans-serif;
+
     }
 
     .card-custom:hover {
@@ -65,7 +69,7 @@
         width: 100%;
         padding: 12px;
         margin-top: 20px;
-        color: #ffffff !important;
+        color: #fdfdfd !important;
         text-align: center;
     }
 
@@ -79,16 +83,28 @@
         padding-bottom: 5px;
     }
 
-    @media (max-width: 576px) {
-    .card-custom h4 {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
+    .card-custom .content h1,
+    .card-custom .content h2,
+    .card-custom .content h3,
+    .card-custom .content h4,
+    .card-custom .content h5,
+    .card-custom .content h6 {
+        font-size: inherit;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        display: inline;
     }
-}
 
+    @media (max-width: 576px) {
+        .card-custom h4 {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+        }
+    }
 </style>
-<section id="service" class="py-5 bg-white">
+<section id="service" class="py-5">
     <div class="container">
         <div class="text-center mb-4">
             <h3 class="service-title"><span class="section-title">Our Services</span></h3>

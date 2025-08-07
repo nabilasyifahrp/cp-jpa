@@ -78,7 +78,7 @@
             bottom: 20px;
             right: 20px;
             background-color: #0f266e;
-            color: #ffffff;
+            color: #fdfdfd;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border: none;
         }
