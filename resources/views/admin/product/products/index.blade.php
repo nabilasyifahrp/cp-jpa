@@ -77,6 +77,12 @@
             transition: transform 0.2s ease;
         }
 
+        .product-card p {
+            word-wrap: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
         .product-card:hover {
             transform: scale(1.01);
         }

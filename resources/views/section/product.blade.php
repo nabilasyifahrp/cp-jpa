@@ -77,6 +77,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        height: 100%;
     }
 
     .product-card:hover {
@@ -108,6 +109,9 @@
         font-size: 13.5px;
         line-height: 1.5;
         margin-bottom: 6px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
 
     .read-more-btn {
@@ -122,6 +126,7 @@
     .product-wrapper {
         max-width: 340px;
         width: 100%;
+        height: 100%;
     }
 
     @media (max-width: 992px) {
