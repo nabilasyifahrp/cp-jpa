@@ -64,8 +64,13 @@
         }
 
         .title {
-            color: #0f266e;
+            color: #0a2c6b;
         }
+
+        .border-bottom-custom {
+            border-bottom: 3px solid #001f3f;
+        }
+
 
         .icon-button {
             width: 48px;
@@ -118,7 +123,7 @@
                 </div>
             @endif
 
-            <h1 class="title text-center border-bottom border-3 pb-2 mb-5 break-word">{{ $service->title }}</h1>
+            <h1 class="title text-center pb-2 mb-5 break-word border-bottom-custom">{{ $service->title }}</h1>
             <p class="text-justify small">{!! $service->description !!}</p>
         </div>
 
