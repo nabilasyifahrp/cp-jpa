@@ -4,7 +4,6 @@
         padding-top: 64px;
         padding-bottom: 128px;
         overflow: hidden;
-
         color: #fdfdfd;
     }
 
