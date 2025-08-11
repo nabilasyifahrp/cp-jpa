@@ -25,7 +25,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'description' => 'required',
+            'description' => 'required|max:100',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
@@ -61,7 +61,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'description' => 'required',
+            'description' => 'required|max:100',
             'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
