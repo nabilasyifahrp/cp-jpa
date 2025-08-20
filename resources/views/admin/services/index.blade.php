@@ -67,6 +67,7 @@
             background: linear-gradient(to right, #3461FF, #2241b0);
             font-weight: 600;
             border: none;
+            color: #fdfdfd;
         }
 
         .btn-add:hover {
@@ -78,7 +79,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
-            background-color: #fff;
+            background-color: #fdfdfd;
             padding: 20px;
             transition: transform 0.2s;
             height: 220px;
@@ -136,36 +137,36 @@
         <h2 class="text-center fw-semibold">Our Services</h2>
         <p class="text-center text-muted mb-5">Manage and update your company's list of services here.</p>
         @if (session('success'))
-            <div class="alert alert-success fade show auto-dismiss" role="alert">
-                {{ session('success') }}
-            </div>
+        <div class="alert alert-success fade show auto-dismiss" role="alert">
+            {{ session('success') }}
+        </div>
         @endif
 
         <div class="text-end mb-5">
-            <a href="{{ route('service.create') }}" class="btn btn-add px-4 py-2 text-white">Add Service</a>
+            <a href="{{ route('service.create') }}" class="btn btn-add px-4 py-2">Add Service</a>
         </div>
         <div class="row justify-content-center g-4">
             @foreach ($services as $service)
-                <div class="col-md-4 col-sm-6" onclick="window.location='{{ route('service.read', $service->id) }}'">
-                    <div class="service-container position-relative">
-                        <form action="{{ route('service.destroy', $service->id) }}" method="POST"
-                            class="position-absolute top-0 end-0">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="close-icon btn btn-link p-0 m-0 text-decoration-none"
-                                onclick="event.stopPropagation()">
-                                &times;
-                            </button>
-                        </form>
+            <div class="col-md-4 col-sm-6" onclick="window.location='{{ route('service.read', $service->id) }}'">
+                <div class="service-container position-relative">
+                    <form action="{{ route('service.destroy', $service->id) }}" method="POST"
+                        class="position-absolute top-0 end-0">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="close-icon btn btn-link p-0 m-0 text-decoration-none"
+                            onclick="event.stopPropagation()">
+                            &times;
+                        </button>
+                    </form>
 
-                        <div class="service-card d-flex flex-column justify-content-center align-items-center h-100">
-                            <i class="fas fa-cogs fa-4x mt-3"></i>
-                            <p class="fw-semibold fs-6 mt-3 text-wrap-control">
-                                {{ \Illuminate\Support\Str::limit($service->title, 25) }}
-                            </p>
-                        </div>
+                    <div class="service-card d-flex flex-column justify-content-center align-items-center h-100">
+                        <i class="fas fa-cogs fa-4x mt-3"></i>
+                        <p class="fw-semibold fs-6 mt-3 text-wrap-control">
+                            {{ \Illuminate\Support\Str::limit($service->title, 25) }}
+                        </p>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>

@@ -44,5 +44,9 @@
 <!--== theme.min -->
 <link href="assets/css/theme.min.css" rel="stylesheet" />
 
-
 <!-- inject css end -->
+<style>
+    #ht-preloader {
+        opacity: 1;
+    }
+</style>

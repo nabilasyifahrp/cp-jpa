@@ -41,88 +41,53 @@
             flex-direction: column;
         }
 
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(52, 97, 255, 0.1);
-            padding: 1rem 0;
+        .rounded-nav {
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(52, 97, 255, 0.1);
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .admin-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .admin-avatar {
+        .logo {
             width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(52, 97, 255, 0.3);
         }
 
-        .admin-details h6 {
-            margin: 0;
-            color: var(--dark);
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .admin-details p {
-            margin: 0;
-            color: var(--secondary);
-            font-size: 0.85rem;
-        }
-
-        .logout-btn {
-            background: linear-gradient(135deg, #ff4757 0%, #ff3742 100%);
+        .btn-navbar {
+            background-color: transparent;
             border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 12px;
-            color: white;
+            color: #000000;
+            padding: 6px 16px;
             font-weight: 500;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
+            transform: scale(1);
         }
 
-        .logout-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 71, 87, 0.4);
-            color: white;
+        .btn-navbar:hover {
+            transform: scale(1.05);
         }
 
-        .logout-btn:active {
-            transform: translateY(0);
+        .btn-logout {
+            background-color: transparent;
+            border: 2px solid #2241b0;
+            border-radius: 10px;
+            padding: 6px 20px;
+            color: #000000;
+            font-weight: 500;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            text-shadow: none;
+            transform: scale(1);
         }
 
-        .logout-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
+        .btn-logout:hover {
+            background-color: #3461FF;
+            transform: scale(1.05);
         }
 
         .content {
@@ -370,27 +335,19 @@
 
 <body>
     <div class="main-container">
-        <header class="header">
-            <div class="header-content">
-                <div class="admin-info">
-                    <div class="admin-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="admin-details">
-                        <h6>Administrator</h6>
-                        <p>System Manager</p>
-                    </div>
+        <nav class="navbar navbar-light shadow-sm rounded-nav">
+            <div class="container d-flex justify-content-between align-items-center py-2">
+                <a href="{{ route('home.jpa') }}" class="d-flex align-items-center">
+                    <img src="{{ asset('assets/images/logo/jpa.png') }}" alt="Logo" class="logo me-2">
+                </a>
+                <div class="d-flex gap-2">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="btn btn-logout">Logout</button>
+                    </form>
                 </div>
-
-                <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: inline;">
-                    @csrf
-                    <button type="submit" class="logout-btn">
-                        <i class="fas fa-power-off"></i>
-                        <span>Logout</span>
-                    </button>
-                </form>
             </div>
-        </header>
+        </nav>
 
         <main class="content">
             <div class="page-title">
@@ -416,7 +373,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="dashboard-card card-product fade-in">
+                <a href="{{ route('product.management') }}" class="dashboard-card card-product fade-in">
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-box-open"></i>
@@ -428,7 +385,7 @@
                         <i class="fas fa-arrow-right card-arrow"></i>
                     </div>
                     <div class="card-total">
-                        <span class="total-number">168</span>
+                        <span class="total-number">{{ $totalProducts }}</span>
                         <span class="total-label">Total Products</span>
                     </div>
                 </a>
@@ -455,17 +412,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.getElementById('logout-form').addEventListener('submit', function(e) {
-            const btn = this.querySelector('.logout-btn');
-            const icon = btn.querySelector('i');
-            const text = btn.querySelector('span');
-
-            icon.className = 'fas fa-spinner fa-spin';
-            text.textContent = 'Logging out...';
-            btn.disabled = true;
-
-        });
-
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.dashboard-card');
 

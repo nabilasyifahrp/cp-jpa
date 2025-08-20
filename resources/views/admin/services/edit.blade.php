@@ -68,7 +68,7 @@
         .form-container {
             max-width: 800px;
             margin: 60px auto;
-            background: #ffffff;
+            background: #fdfdfd;
             padding: 36px;
             border-radius: 20px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -88,6 +88,7 @@
             width: 100%;
             padding: 12px;
             margin-top: 20px;
+            color: #fdfdfd;
         }
 
         .btn-update:hover {
@@ -151,7 +152,7 @@
                 <textarea id="description" name="description">{{ old('description', $service->description) }}</textarea>
             </div>
 
-            <button id="saveButton" type="submit" class="btn btn-update text-white">Update</button>
+            <button id="saveButton" type="submit" class="btn btn-update">Update</button>
         </form>
     </div>
 
