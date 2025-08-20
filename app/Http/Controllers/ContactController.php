@@ -1,30 +1,29 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    // Halaman Contact (isi: info kantor + form contact)
     public function index()
     {
-        return view('contact.index');
+        return view('contact.index'); // ini nyambung ke resources/views/contact/index.blade.php
     }
 
-    // Proses kirim form
     public function store(Request $request)
     {
+        // Validasi input
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'phone' => 'required',
-            'message' => 'required',
+            'message' => 'required'
         ]);
 
+        // Simpan ke database
         Contact::create($request->all());
 
-        return back()->with('success', 'Your message has been sent successfully!');
+        // Redirect dengan pesan sukses
+        return redirect()->route('contact')->with('success', 'Pesan kamu sudah dikirim!');
     }
 }

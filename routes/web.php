@@ -44,11 +44,19 @@ Route::middleware('auth')->group(function () {
 
 
     // Partner CRUD
-    Route::resource('/partners', PartnerController::class);
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resource('partners', PartnerController::class);
+    });
+    
+
+
+    
 
     // Contact 
     Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
     Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+    Route::resource('partners', PartnerController::class);
+
 
 
 

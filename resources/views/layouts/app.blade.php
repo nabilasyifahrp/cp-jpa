@@ -10,6 +10,7 @@
 
     <!-- page wrapper start -->
     <div class="page-wrapper">
+<<<<<<< Updated upstream
 
         <!-- preloader start -->
         <div id="ht-preloader"
@@ -62,15 +63,38 @@
         @include('layouts.partials.footer')
         <!--footer end-->
 
+=======
+    <!-- preloader start -->
+    <div id="ht-preloader">
+        <div class="loader clear-loader">
+            <span></span>
+        </div>
+>>>>>>> Stashed changes
     </div>
-    <!-- page wrapper end -->
+    <!-- preloader end -->
 
+<<<<<<< Updated upstream
     <!-- inject js start -->
     @include('layouts.partials.foot')
     <!-- inject js end -->
+=======
+    <!--header start-->
+    @include('layouts.partials.navbar')
+    <!--header end-->
 
-    @yield('content')
+    <!--body content start-->
+    <div class="page-content">
+        @yield('content') 
+    </div>
+    <!--body content end-->
+>>>>>>> Stashed changes
 
+    <!--footer start-->
+    @include('layouts.partials.footer')
+    <!--footer end-->
+</div>
+
+    
 </body>
 
 </html>

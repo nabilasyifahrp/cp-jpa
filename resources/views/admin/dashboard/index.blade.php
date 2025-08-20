@@ -390,7 +390,8 @@
                     </div>
                 </a>
 
-                <a href="#" class="dashboard-card card-partner fade-in">
+                <a href="{{ route('admin.partners.index') }}" class="dashboard-card card-partner fade-in">
+
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-handshake"></i>

@@ -27,15 +27,17 @@
     .btn-navbar {
         background-color: transparent;
         border: none;
-        color: #000000;
+        color: #000;
         padding: 6px 16px;
         font-weight: 500;
+        text-decoration: none;
         transition: all 0.3s ease;
         transform: scale(1);
     }
 
     .btn-navbar:hover {
         transform: scale(1.05);
+        color: #2241b0;
     }
 
     .btn-contact {
@@ -43,28 +45,32 @@
         border: 2px solid #2241b0;
         border-radius: 10px;
         padding: 6px 20px;
-        color: #000000;
+        color: #000;
         font-weight: 500;
-        text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-        transition: all 0.3s ease;
         text-shadow: none;
+        transition: all 0.3s ease;
         transform: scale(1);
+        text-decoration: none;
     }
 
     .btn-contact:hover {
         background-color: #3461FF;
+        color: #fff;
         transform: scale(1.05);
     }
 </style>
 
 <nav class="navbar navbar-light shadow-sm rounded-nav">
     <div class="container d-flex justify-content-between align-items-center py-2">
+        
         <a href="{{ route('home.jpa') }}" class="d-flex align-items-center">
             <img src="{{ asset('assets/images/logo/jpa.png') }}" alt="Logo" class="logo me-2">
         </a>
+
+        
         <div class="d-flex gap-2">
             <a href="{{ route('home.jpa') }}" class="btn btn-navbar">Home</a>
-            <a href="{{ route('home.jpa') }}" class="btn btn-contact">Contact</a>
+            <a href="{{ route('contact.index') }}" class="btn btn-contact">Contact</a>
         </div>
     </div>
 </nav>

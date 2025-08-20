@@ -15,12 +15,12 @@ class PartnerController extends Controller
     public function index()
 {
     $partners = Partner::all();
-    return view('partner.index', compact('partners'));
+    return view('admin.partner.index', compact('partners'));
 }
 
 public function create()
 {
-    return view('partner.create');
+    return view('admin.partner.create');
 }
 
 public function store(Request $request)
@@ -39,17 +39,17 @@ public function store(Request $request)
 
     Partner::create($data);
 
-    return redirect()->route('partners.index')->with('success', 'Partner successfully added.');
+    return redirect()->route('admin.partners.index')->with('success', 'Partner successfully added.');
 }
 
 public function show(Partner $partner)
 {
-    return view('partner.show', compact('partner'));
+    return view('admin.partner.show', compact('partner'));
 }
 
 public function edit(Partner $partner)
 {
-    return view('partner.edit', compact('partner'));
+    return view('admin.partner.edit', compact('partner'));
 }
 
 public function update(Request $request, Partner $partner)
@@ -71,7 +71,7 @@ public function update(Request $request, Partner $partner)
 
     $partner->update($data);
 
-    return redirect()->route('partners.index')->with('success', 'Partner successfully updated.');
+    return redirect()->route('admin.partners.index')->with('success', 'Partner successfully updated.');
 }
 
 public function destroy(Partner $partner)
@@ -82,7 +82,7 @@ public function destroy(Partner $partner)
 
     $partner->delete();
 
-    return redirect()->route('partners.index')->with('success', 'The partner was successfully deleted.');
+    return redirect()->route('admin.partners.index')->with('success', 'The partner was successfully deleted.');
 }
 
 }
